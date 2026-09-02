@@ -20,6 +20,15 @@
   - Plan: pin **model version + prompt + seed** together as one
     reproducible unit — the thing that gets committed/logged before
     an outcome is observed.
+  - Seed reproducibility is now **empirically confirmed, not just
+    asserted**: a manual two-run test on Replicate
+    (`stability-ai/stable-diffusion-3.5-large`, prompt "red bird on a
+    branch", seed 17420) produced visually identical output both
+    times. See `log/2026-09-02-seed-reproducibility-test.md`.
+    (Confirmed at the visual level only — no hash-level check yet.)
+  - **Version-hash pinning still open.** That first test used the
+    bare model name, no pinned version hash. A pinned hash is needed
+    before any real (non-throwaway) trial.
 
 ## Open questions
 
