@@ -48,3 +48,12 @@ Supersedes the earlier "testor selects a known target, subject picks
 
 Whether trials have a real sealed target at all, or are pure
 convergence-only tests with no ground truth. Undecided.
+
+Also unresolved: whether each pick should carry a logged **behavioral
+proxy for surprise / salience** — e.g. hesitation / response time,
+self-reported confidence, degree of pull toward the chosen image —
+rather than logging only the raw pick. Motivated by the
+surprise-triggered-escalation idea in `object/README.md` (a
+Markov-blanket anomaly would register as high prediction error /
+salience, not just as a structural feature). Not a decided protocol
+change — flagged as a possible measure to add.

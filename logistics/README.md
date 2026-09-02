@@ -67,6 +67,17 @@ here because it bears on tooling.
   marks self-organizing / agentic systems in general (a bacterium
   qualifies), not *advanced* intelligence specifically. Unresolved
   gap.
+- **Extensions (full writeup in `object/README.md`, both
+  preliminary):**
+  - *Surprise-triggered escalation (free energy principle)* — a
+    Markov-blanket anomaly reframed as a high-prediction-error trip
+    wire that escalates attention; mathematically motivated and,
+    under an entropy budget, computationally necessary rather than
+    optional.
+  - *ROI filtering / "like recognizes like"* — the filter may be
+    tuned to recognize another system running an entropy-delaying,
+    structure-preserving process (ties to SEITWH scoring), i.e.
+    recognition rather than mere detection.
 
 ## Open questions
 
