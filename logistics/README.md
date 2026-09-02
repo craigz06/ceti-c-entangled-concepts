@@ -30,10 +30,48 @@
     bare model name, no pinned version hash. A pinned hash is needed
     before any real (non-throwaway) trial.
 
+## Decided since
+
+- **AI's role — decided: parallel blind receiver** (also logged in
+  `object/README.md`). AI makes its own independent, blind reduction
+  alongside the human subject; the two picks are compared trial to
+  trial.
+  - Rejected for now, kept as record of what was considered:
+    1. Seeded-image target generator — presumes a ground-truth target
+       the current design may not have.
+    2. The medium / entangled link itself — not operationalizable at
+       this stage.
+
+## AETI "emulation" — preliminary / exploratory
+
+Not settled methodology. Fuller writeup in `object/README.md`; logged
+here because it bears on tooling.
+
+- **Rejected approach (for the record):** an entropy / waste-heat-
+  export criterion told to *both predictors in advance* as a shared,
+  explicit selection rule. Rejected — a shared explicit rule makes any
+  convergence between predictors trivial (both just following the same
+  instructions), not evidence of anything.
+- **Current direction:** bake an entropy / waste-heat-export
+  *signature* into the **generation** of one candidate image (or the
+  trajectory pair) as a material property, invisible to both blind
+  predictors. Question: do the predictors gravitate toward it above
+  chance without being told it differs? AETI as a property of the test
+  material, not an instruction to the testers.
+- **Proposed operationalization (exploratory):** a **Markov blanket**
+  structure — legible internal/external boundary plus differentiated,
+  non-interchangeable input and output channels (mouth/anus: two
+  distinct openings, import vs. export, never reversed) — versus
+  control images with no legible boundary or I/O distinction.
+- **Known scope limitation:** a Markov blanket with differentiated I/O
+  marks self-organizing / agentic systems in general (a bacterium
+  qualifies), not *advanced* intelligence specifically. Unresolved
+  gap.
+
 ## Open questions
 
-- **AI's role — undecided, three candidates** (also logged in
-  `object/README.md`):
-  1. Seeded-image target generator.
-  2. Parallel blind receiver, run alongside the human subject.
-  3. The medium/entangled link itself.
+- Whether trials have a real sealed target at all, or are pure
+  convergence-only tests with no ground truth (see
+  `intent/README.md`). Not yet decided.
+- **Version-hash pinning** for the image model — still open (see
+  "Tooling decisions made so far" above).
