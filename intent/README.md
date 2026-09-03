@@ -130,11 +130,10 @@ constraint on causal language.
 Keith Boskoff's observation (architecture partner, c.1988; see
 `object/README.md` "Sources of design framing"): AETI likely has no
 reason to engage with passive observation — a probe that only asks
-"report your state" is still
-just tuning a receiver, structurally the same posture as SETI's
-listening instrument, just aimed at a different kind of space. If
-there's nothing on offer, there's nothing compelling a specific
-response.
+"report your state" is still just tuning a receiver, structurally the
+same posture as SETI's listening instrument, just aimed at a different
+kind of space. If there's nothing on offer, there's nothing compelling
+a specific response.
 
 The proposed reframe: build the next address as an **offering**
 rather than a question — hand AETI something toward its own entropy
