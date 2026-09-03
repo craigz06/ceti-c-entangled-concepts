@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>AETI Trial Log — Trajectory Viewer</title>
+<title>AETI Viewer — trial log review</title>
 <style>
   :root{
     --paper:#eceff1;
@@ -548,7 +548,7 @@ async function connectFolder(){
     alert("Couldn't open log/trials.json:\n" + (err && err.message ? err.message : err)
       + "\n\nIf this page was opened directly as a file:// URL, serve the repo instead —\n"
       + "run  python3 -m http.server  in the project folder and open\n"
-      + "http://localhost:8000/trial-viewer.html");
+      + "http://localhost:8000/aeti-viewer.html");
   }
 }
 

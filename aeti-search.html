@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AETI Trial Log — Control Panel</title>
+<title>AETI Search — predict · commit · observe</title>
 <style>
   :root{
     --paper:#eceff1;
@@ -256,8 +256,9 @@
 
   <header>
     <div class="kicker">CETi-C / AETI — predict · commit · observe</div>
-    <h1>Control panel</h1>
-    <p>The commit-before-observe instrument. Write the address and the
+    <h1>AETI search</h1>
+    <p>One sub-program of the CETi-C project — the commit-before-observe
+    instrument for the prompt-tuning track. Write the address and the
     prediction, commit them (timestamped, written straight to
     <code>log/trials.json</code>), and only then record what came
     back. A committed prediction can't be edited here — a changed
@@ -267,7 +268,7 @@
 
   <div class="toolbar">
     <button class="primary" id="connectBtn">Connect to project folder</button>
-    <a class="tool-link" id="viewerLink" href="trial-viewer.html" target="_blank" rel="noopener">Open trial viewer &rarr;</a>
+    <a class="tool-link" id="viewerLink" href="aeti-viewer.html" target="_blank" rel="noopener">Open AETI viewer &rarr;</a>
   </div>
 
   <div class="unsupported" id="unsupported">
@@ -275,7 +276,7 @@
     (<code>window.showDirectoryPicker</code>) to read and write
     <code>log/trials.json</code> directly, with no server. Use
     <strong>Chrome</strong> or <strong>Edge</strong> on the desktop.
-    The trial viewer still runs in this browser — it keeps manual
+    The AETI viewer still runs in this browser — it keeps manual
     Import / Export JSON as a fallback.
   </div>
 
@@ -418,7 +419,7 @@ async function connect(){
     alert("Couldn't open log/trials.json:\n" + (err && err.message ? err.message : err)
       + "\n\nIf this page was opened directly as a file:// URL, serve the repo instead —\n"
       + "run  python3 -m http.server  in the project folder and open\n"
-      + "http://localhost:8000/control-panel.html");
+      + "http://localhost:8000/aeti-search.html");
     return;
   }
   els.panel.classList.remove('locked');
