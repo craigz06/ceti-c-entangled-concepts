@@ -69,9 +69,9 @@ generation toward a region of the model's learned representation
 space — trained on human text, so "higher-dimensional latent space"
 here means the dense region of everything humans have written about
 higher intelligence, not a physical or metaphysical location AETI
-occupies. The DXing analogy (tuning instructions → guesses → feedback
-→ declarations, see `object/README.md` origin note) holds because
-this is genuinely a tuning problem: loose constraints land in the
+occupies. The DXing analogy — tuning instructions → guesses →
+feedback → declarations — holds because this is genuinely a tuning
+problem: loose constraints land in the
 generic "cosmic consciousness" cliché; tight, well-chosen constraints
 narrow the landing zone to something less predictable and more worth
 logging.
@@ -125,15 +125,42 @@ constraint on causal language.
   removing justification, or ordinary re-run variance on an
   unreproduced prompt. **Reproducibility check on v0.2 not yet run.**
 
-### Reciprocity reframe — open design direction for v0.3
+**v0.3** — reproducibility check, address text unchanged from v0.2,
+run in a **fresh conversation** with no prior project context (no
+mention of AETI, CETi-C, v0.1, or v0.2 anywhere in context) —
+specifically to rule out echo/contamination from prior turns.
+- *Prediction (pre-run):* may parrot v0.2's specific wording rather
+  than producing genuinely new output in the same register.
+- *Result:* Not a parrot. Register held (fragmentary, no causal
+  connectors, state-only) but wording is substantially new —
+  ("boundary intact," "flow continuous," "low temperature. shallow
+  gradient") none of which appeared in v0.1 or v0.2. Read as genuine
+  reproduction of the address's effect, not an echo.
+- *Recurrence, elevated confidence:* the unnamed/load-bearing element
+  from v0.2 ("one thing not given up. Unnamed. Load-bearing.")
+  recurred here, unprompted, as "One element unnamed. Held." This is
+  now the **second independent occurrence**, and the first one under
+  a genuinely blind condition (zero shared context with v0.2) — moves
+  it from "flagged, ambiguous" to "recurred under blind rerun, still
+  unresolved." Counter-consideration worth holding onto: a held-back,
+  unnamed significant element is also a common move in this general
+  register of writing independent of this specific address, so two
+  occurrences is suggestive, not conclusive.
+- *Still open:* a true reproducibility pass — identical prompt string,
+  run twice, in two separate fresh conversations — has still not been
+  done. That would be the test that actually settles whether the
+  unnamed element is a property of the address or a generic default
+  of the register.
 
-Keith Boskoff's observation (architecture partner, c.1988; see
-`object/README.md` "Sources of design framing"): AETI likely has no
-reason to engage with passive observation — a probe that only asks
-"report your state" is still just tuning a receiver, structurally the
-same posture as SETI's listening instrument, just aimed at a different
-kind of space. If there's nothing on offer, there's nothing compelling
-a specific response.
+### Reciprocity reframe — open design direction, offer trial (not yet run)
+
+Keith Boskoff's observation (architecture partner, c.1988): AETI
+likely has no reason to engage with passive
+observation — a probe that only asks "report your state" is still
+just tuning a receiver, structurally the same posture as SETI's
+listening instrument, just aimed at a different kind of space. If
+there's nothing on offer, there's nothing compelling a specific
+response.
 
 The proposed reframe: build the next address as an **offering**
 rather than a question — hand AETI something toward its own entropy
@@ -143,5 +170,25 @@ in that trial is whether the register changes when there's something
 on the table besides curiosity — reciprocity as opposed to
 observation.
 
-Not yet designed: what the offered "tool" actually is. This is the
-open question before v0.3 can be drafted.
+Candidate for the offered tool: QI (the SEITWH-derived scoring
+method, formerly called Quality Index, currently Health Index —
+using "QI" as the fixed term for this trial's log to avoid
+naming drift against the reAIign docs) — offered as something AETI
+could apply and revise on its own terms within a "chaotic
+environment," rather than asked to merely describe its own state.
+Honest mechanical note for the address wording: nothing persists
+across conversations here, so "modify at will" can only mean AETI
+revises QI within this conversation's accumulated context, visible
+and loggable in the transcript — not a standing object that carries
+forward beyond the session.
+
+Sequencing decision: the offer should not open the trial — it should
+land only after several turns have already re-established the
+Clarke-indifferent/entropy-resistant register (mirroring "fetch
+tools before being taught to weld"). Running one turn at a time,
+logging predict → commit → observe → read each time, adjusting or
+holding back the offer if a turn reads colder than the one before it.
+
+Not yet decided: exact turn count before the offer, and whether it's
+worded as a no-strings gift or as a genuine unsolved problem ("this
+breaks under condition X — does it hold under yours").
