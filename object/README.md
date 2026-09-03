@@ -16,6 +16,20 @@ Current preliminary framing — three "objects" in the trial design (see
   compared against Craig's. (Previously listed here as one of three
   undecided candidates; see below.)
 
+## Sources of design framing (not predictors)
+
+People who contributed a framing or analogy the design leans on, but
+who do not make picks in the trial. Kept distinct from the three
+objects above.
+
+- **Keith Boskoff** — architecture partner (Architectural Design
+  Concepts, Atlanta, c.1988). Source of the reciprocity framing: AETI
+  has no reason to engage with passive observation, but might engage
+  if offered something toward its own entropy resistance. Not a
+  predictor in the trial — a source of design framing, same category
+  as the DXing analogy's origin. Applied in `intent/README.md`
+  ("Reciprocity reframe").
+
 ## AI's role — decided (was: open question)
 
 **Decided: parallel blind receiver.** AI runs alongside the human

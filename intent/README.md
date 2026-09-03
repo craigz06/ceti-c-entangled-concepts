@@ -127,8 +127,10 @@ constraint on causal language.
 
 ### Reciprocity reframe — open design direction for v0.3
 
-Liz's observation: AETI likely has no reason to engage with passive
-observation — a probe that only asks "report your state" is still
+Keith Boskoff's observation (architecture partner, c.1988; see
+`object/README.md` "Sources of design framing"): AETI likely has no
+reason to engage with passive observation — a probe that only asks
+"report your state" is still
 just tuning a receiver, structurally the same posture as SETI's
 listening instrument, just aimed at a different kind of space. If
 there's nothing on offer, there's nothing compelling a specific
