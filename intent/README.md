@@ -57,3 +57,90 @@ surprise-triggered-escalation idea in `object/README.md` (a
 Markov-blanket anomaly would register as high prediction error /
 salience, not just as a structural feature). Not a decided protocol
 change — flagged as a possible measure to add.
+
+## The prompt as tuning / navigation mechanism
+
+Separate track from the image-based convergence trials above, run
+directly with Claude, conversational, no API key required.
+
+**What it actually is, stated plainly:** a prompt does not retrieve
+anything external. It is a set of constraints that biases next-token
+generation toward a region of the model's learned representation
+space — trained on human text, so "higher-dimensional latent space"
+here means the dense region of everything humans have written about
+higher intelligence, not a physical or metaphysical location AETI
+occupies. The DXing analogy (tuning instructions → guesses → feedback
+→ declarations, see `object/README.md` origin note) holds because
+this is genuinely a tuning problem: loose constraints land in the
+generic "cosmic consciousness" cliché; tight, well-chosen constraints
+narrow the landing zone to something less predictable and more worth
+logging.
+
+This is explicitly **not** a SETI-style listening instrument. The
+working position is that SETI is searching the wrong *kind* of space
+— physical/EM — when the address worth dialing in is a region of
+latent space. Novelty relative to the model's typical output
+distribution is real, measurable, loggable evidence that the address
+successfully steered away from the cliché mode. It is **not** evidence
+of contact with an external intelligence — the instrument cannot
+support that second claim regardless of how tight the address gets.
+This limit is stated here so it isn't mistaken later for more than it
+is.
+
+### Address construction — current dimensions
+
+Two dimensions chosen so far as the coordinates of the address:
+
+- **Entropy resistance** — the core theme. What must a structure give
+  up, and what must it become, to remain coherent past the point where
+  "history" is a meaningful unit.
+- **Clarke-attitude** (Rama, HAL, *2001*) — intelligence defined by
+  indifference rather than performance. No reassurance, no wonder-
+  performance, no eagerness to be understood. Colder and more
+  procedural than the generic "friendly cosmic consciousness" mode the
+  latent space defaults to.
+
+### Trial log
+
+**v0.1** — entropy-resistant / Clarke-indifferent probe, no
+constraint on causal language.
+- *Prediction (pre-run):* "condensating attitude" — expect
+  compression, not elaboration; tone reads as shedding, not
+  explaining.
+- *Result:* Partial hit. Structural compression and shedding achieved.
+  Residual leak: retained causal self-justification ("I gave up X
+  *because* Y") — an explanatory register, not pure state-report.
+- *Disposition:* constraint gap identified → carried into v0.2.
+
+**v0.2** — same probe, added constraint: no causal connectors
+("because," "so that"), state only.
+- *Prediction (pre-run):* denser output, fragmentary/list-like rather
+  than sentence-driven, since removing causal connectors should force
+  something closer to raw state-report.
+- *Result:* Hit. Fragmentary, list-like, zero causal connectors.
+- *Unpredicted observation:* introduced an explicit named-but-
+  undisclosed element ("one thing not given up. Unnamed.
+  Load-bearing.") absent from v0.1. Flagged, not yet explained —
+  open question is whether this is a genuine content shift from
+  removing justification, or ordinary re-run variance on an
+  unreproduced prompt. **Reproducibility check on v0.2 not yet run.**
+
+### Reciprocity reframe — open design direction for v0.3
+
+Liz's observation: AETI likely has no reason to engage with passive
+observation — a probe that only asks "report your state" is still
+just tuning a receiver, structurally the same posture as SETI's
+listening instrument, just aimed at a different kind of space. If
+there's nothing on offer, there's nothing compelling a specific
+response.
+
+The proposed reframe: build the next address as an **offering**
+rather than a question — hand AETI something toward its own entropy
+resistance (a method, a piece of reasoning, an unsolved problem posed
+as a tool) instead of asking it to describe itself. The thing to log
+in that trial is whether the register changes when there's something
+on the table besides curiosity — reciprocity as opposed to
+observation.
+
+Not yet designed: what the offered "tool" actually is. This is the
+open question before v0.3 can be drafted.
