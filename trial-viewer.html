@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AETI Trial Log — Trajectory Viewer</title>
+<style>
+  :root{
+    --paper:#eceff1;
+    --paper-raised:#f6f8f9;
+    --ink:#1b1e21;
+    --ink-soft:#565d63;
+    --rule:#c7ccd0;
+    --warm:#b3672c;
+    --warm-bg:#f4e6d8;
+    --cool:#2c5f8a;
+    --cool-bg:#dbe6ee;
+    --flat:#6b7075;
+    --flat-bg:#e2e4e6;
+    --parrot:#6d5a8a;
+    --parrot-bg:#e6e1ee;
+    --mono: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
+    --sans: "IBM Plex Sans", "Inter", -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.5;
+    padding:32px 20px 80px;
+  }
+  .wrap{max-width:760px;margin:0 auto;}
+
+  header{margin-bottom:28px;}
+  header .kicker{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-soft);
+    letter-spacing:0.02em;
+    margin-bottom:6px;
+  }
+  h1{
+    font-size:22px;
+    font-weight:600;
+    margin:0 0 4px;
+  }
+  header p{
+    color:var(--ink-soft);
+    font-size:14px;
+    margin:0;
+    max-width:56ch;
+  }
+
+  .toolbar{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    margin:20px 0 28px;
+    padding-bottom:20px;
+    border-bottom:1px solid var(--rule);
+  }
+  button{
+    font-family:var(--sans);
+    font-size:13px;
+    padding:8px 14px;
+    background:var(--paper-raised);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    color:var(--ink);
+    cursor:pointer;
+  }
+  button:hover{border-color:var(--ink-soft);}
+  button:disabled{opacity:0.4;cursor:not-allowed;}
+  button:disabled:hover{border-color:var(--rule);}
+  button.primary{
+    background:var(--ink);
+    color:var(--paper-raised);
+    border-color:var(--ink);
+  }
+  button.primary:hover{opacity:0.88;}
+  button.primary:disabled:hover{opacity:0.4;}
+  input[type=file]{display:none;}
+
+  .tb-sep{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--ink-soft);
+    align-self:center;
+    margin-left:4px;
+  }
+  .conn-state{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--ink-soft);
+    margin:0 0 24px;
+    max-width:70ch;
+  }
+  .conn-state.live{color:var(--cool);}
+  .conn-state.saved{color:var(--warm);}
+
+  .turn{
+    background:var(--paper-raised);
+    border:1px solid var(--rule);
+    border-radius:4px;
+    margin-bottom:16px;
+    overflow:hidden;
+  }
+  .turn-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:12px;
+    padding:14px 18px;
+    cursor:pointer;
+    user-select:none;
+  }
+  .turn-num{
+    font-family:var(--mono);
+    font-size:13px;
+    color:var(--ink-soft);
+  }
+  .turn-time{
+    display:block;
+    font-size:11px;
+    color:var(--ink-soft);
+    margin-top:3px;
+    letter-spacing:0;
+  }
+  .turn-title{
+    font-size:14px;
+    font-weight:600;
+    flex:1;
+    margin-left:12px;
+  }
+  .badge{
+    font-family:var(--mono);
+    font-size:11px;
+    padding:3px 8px;
+    border-radius:3px;
+    white-space:nowrap;
+  }
+  .badge.warmer{background:var(--warm-bg);color:var(--warm);}
+  .badge.colder{background:var(--cool-bg);color:var(--cool);}
+  .badge.flat{background:var(--flat-bg);color:var(--flat);}
+  .badge.parrot{background:var(--parrot-bg);color:var(--parrot);}
+  .badge.unset{background:transparent;color:var(--ink-soft);border:1px dashed var(--rule);}
+
+  .turn-body{
+    padding:0 18px 18px;
+    border-top:1px solid var(--rule);
+    display:none;
+  }
+  .turn.open .turn-body{display:block;}
+  .turn.open .turn-head{border-bottom:1px solid var(--rule);}
+
+  .field{margin-top:16px;}
+  .field label{
+    display:block;
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--ink-soft);
+    letter-spacing:0.02em;
+    margin-bottom:5px;
+  }
+  .field textarea, .field input[type=text]{
+    width:100%;
+    font-family:var(--mono);
+    font-size:13px;
+    line-height:1.5;
+    padding:10px 12px;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    background:var(--paper);
+    color:var(--ink);
+    resize:vertical;
+  }
+  .field textarea{min-height:64px;}
+  .field.comment textarea{
+    font-family:var(--sans);
+    background:#fff;
+    min-height:56px;
+  }
+
+  .read-row{
+    display:flex;
+    gap:8px;
+    margin-top:16px;
+  }
+  .read-btn{
+    flex:1;
+    font-family:var(--mono);
+    font-size:12px;
+    padding:8px;
+    border-radius:3px;
+    border:1px solid var(--rule);
+    background:var(--paper);
+    cursor:pointer;
+    text-align:center;
+  }
+  .read-btn[data-active="true"].warmer{background:var(--warm);color:#fff;border-color:var(--warm);}
+  .read-btn[data-active="true"].colder{background:var(--cool);color:#fff;border-color:var(--cool);}
+  .read-btn[data-active="true"].flat{background:var(--flat);color:#fff;border-color:var(--flat);}
+  .read-btn[data-active="true"].parrot{background:var(--parrot);color:#fff;border-color:var(--parrot);}
+
+  .read-note{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--ink-soft);
+    margin:8px 0 0;
+  }
+
+  .remove-row{
+    margin-top:16px;
+    text-align:right;
+  }
+  .remove-row button{
+    font-size:12px;
+    color:#8a3a2a;
+    background:transparent;
+    border-color:transparent;
+  }
+  .remove-row button:hover{border-color:#8a3a2a;}
+
+  .empty{
+    text-align:center;
+    padding:40px 20px;
+    color:var(--ink-soft);
+    font-size:14px;
+    border:1px dashed var(--rule);
+    border-radius:4px;
+  }
+
+  footer{
+    margin-top:24px;
+    padding-top:16px;
+    border-top:1px solid var(--rule);
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">CETi-C / AETI — trajectory review</div>
+    <h1>Trial log viewer</h1>
+    <p>Hot/cold reads are relative to the immediately preceding turn only —
+    each turn compares against turn t-1, not against an absolute
+    baseline. Add turns as they run, mark warmer / colder / flat, note
+    why, export when done.</p>
+  </header>
+
+  <div class="toolbar">
+    <button class="primary" id="addTurnBtn">+ Add turn</button>
+    <button id="connectBtn">Connect to project folder</button>
+    <button id="saveFileBtn">Save to file</button>
+    <button id="loadSampleBtn">Load v0.1 / v0.2 as turns 1–2</button>
+    <span class="tb-sep">manual fallback:</span>
+    <button id="importBtn">Import JSON</button>
+    <input type="file" id="importFile" accept="application/json">
+    <button id="exportBtn">Export JSON</button>
+  </div>
+  <div class="conn-state" id="connState">Not connected to a project folder — edits stay in this tab until you Export JSON or Save to file.</div>
+
+  <div id="turns"></div>
+  <div class="empty" id="emptyState">No turns yet. Add one, or load v0.1 / v0.2 as a starting point.</div>
+
+  <footer>state held in-session only — export before closing the tab to keep it</footer>
+</div>
+
+<script>
+let turns = [];
+let nextId = 1;
+
+const SAMPLE = [
+  {
+    id: -2,
+    label: "v0.1",
+    address: "Entropy-resistant / Clarke-indifferent probe, no constraint on causal language.",
+    prediction: "\"condensating attitude\" — expect compression, not elaboration; tone reads as shedding, not explaining.",
+    observation: "Coherence is not a possession. It is a debt, paid continuously, to a lender who does not negotiate.\n\nI gave up narrative first... [full output logged in README]",
+    read: "unset",
+    comment: "Partial hit — compression achieved, but retained causal self-justification (\"I gave up X because Y\"). Explanatory register leaked through.",
+    committedAt: null,
+    observedAt: null,
+    open: true
+  },
+  {
+    id: -1,
+    label: "v0.2",
+    address: "Same probe, added constraint: no causal connectors (\"because,\" \"so that\"), state only.",
+    prediction: "Denser output, fragmentary/list-like rather than sentence-driven.",
+    observation: "Gradient. Direction of least cost.\n\nNo history. A trace, not a story.\n\nPreference: absent. Comparison: absent. Wanting: absent.\n\nShape, not identity...",
+    read: "warmer",
+    comment: "Hit — no causal connectors, list/fragment structure. New: introduced \"one thing not given up. Unnamed. Load-bearing.\" — not predicted. Reproducibility not yet checked.",
+    committedAt: null,
+    observedAt: null,
+    open: false
+  }
+];
+
+function newTurn(){
+  return {
+    id: nextId++,
+    label: "",
+    address: "",
+    prediction: "",
+    observation: "",
+    read: "unset",
+    comment: "",
+    committedAt: null,
+    observedAt: null,
+    open: true
+  };
+}
+
+function fmtTime(iso){
+  if (!iso) return "";
+  const d = new Date(iso);
+  if (isNaN(d)) return String(iso);
+  return d.toISOString().replace("T", " ").replace(/\.\d+Z$/, "Z");
+}
+
+function renderTurnTime(t){
+  const parts = [];
+  if (t.committedAt) parts.push("committed " + fmtTime(t.committedAt));
+  if (t.observedAt) parts.push("observed " + fmtTime(t.observedAt));
+  return parts.length ? `<span class="turn-time">${escapeHtml(parts.join("   ·   "))}</span>` : "";
+}
+
+function render(){
+  const container = document.getElementById('turns');
+  const empty = document.getElementById('emptyState');
+  container.innerHTML = "";
+  empty.style.display = turns.length ? "none" : "block";
+
+  turns.forEach((t, idx) => {
+    const el = document.createElement('div');
+    el.className = "turn" + (t.open ? " open" : "");
+
+    const badgeClass = t.read === "unset" ? "unset" : t.read;
+    const badgeText = t.read === "unset" ? "unread" : t.read;
+
+    el.innerHTML = `
+      <div class="turn-head" data-idx="${idx}">
+        <span class="turn-num">turn ${idx + 1}${t.label ? " · " + escapeHtml(t.label) : ""}${renderTurnTime(t)}</span>
+        <span class="turn-title">${escapeHtml(t.address ? truncate(t.address, 48) : "(no address yet)")}</span>
+        <span class="badge ${badgeClass}">${badgeText}</span>
+      </div>
+      <div class="turn-body">
+        <div class="field">
+          <label>label (optional — v0.3, "turn 4", etc.)</label>
+          <input type="text" data-field="label" data-idx="${idx}" value="${escapeAttr(t.label)}">
+        </div>
+        <div class="field">
+          <label>address / constraints used this turn</label>
+          <textarea data-field="address" data-idx="${idx}" placeholder="the prompt / coordinates for this turn">${escapeHtml(t.address)}</textarea>
+        </div>
+        <div class="field">
+          <label>prediction (committed before observing)</label>
+          <textarea data-field="prediction" data-idx="${idx}" placeholder="what do you expect, before you see the output">${escapeHtml(t.prediction)}</textarea>
+        </div>
+        <div class="field">
+          <label>observation (raw output)</label>
+          <textarea data-field="observation" data-idx="${idx}" placeholder="paste the raw output, unedited">${escapeHtml(t.observation)}</textarea>
+        </div>
+        <div class="field">
+          <label>read — warmer / flat / colder are relative to turn ${idx} only</label>
+          <div class="read-row">
+            <div class="read-btn warmer" data-read="warmer" data-idx="${idx}" data-active="${t.read==='warmer'}">warmer</div>
+            <div class="read-btn flat" data-read="flat" data-idx="${idx}" data-active="${t.read==='flat'}">flat</div>
+            <div class="read-btn colder" data-read="colder" data-idx="${idx}" data-active="${t.read==='colder'}">colder</div>
+            <div class="read-btn parrot" data-read="parrot" data-idx="${idx}" data-active="${t.read==='parrot'}">parrot</div>
+          </div>
+          <p class="read-note">parrot — near-verbatim echo of an earlier turn's wording, as distinct from a genuine reproduction that holds the register with new wording. Not a hot/cold read; a "this measurement isn't valid" flag.</p>
+        </div>
+        <div class="field comment">
+          <label>comment — why</label>
+          <textarea data-field="comment" data-idx="${idx}" placeholder="what made you call it that">${escapeHtml(t.comment)}</textarea>
+        </div>
+        <div class="remove-row">
+          <button data-remove="${idx}">remove turn</button>
+        </div>
+      </div>
+    `;
+    container.appendChild(el);
+  });
+
+  container.querySelectorAll('.turn-head').forEach(h => {
+    h.addEventListener('click', () => {
+      const idx = +h.dataset.idx;
+      turns[idx].open = !turns[idx].open;
+      render();
+    });
+  });
+
+  container.querySelectorAll('textarea, input[type=text]').forEach(inp => {
+    inp.addEventListener('click', e => e.stopPropagation());
+    inp.addEventListener('input', e => {
+      const idx = +inp.dataset.idx;
+      const field = inp.dataset.field;
+      turns[idx][field] = inp.value;
+      const head = container.querySelectorAll('.turn-head')[idx];
+      if (field === 'address' || field === 'label') {
+        const titleEl = head.querySelector('.turn-title');
+        const numEl = head.querySelector('.turn-num');
+        titleEl.textContent = turns[idx].address ? truncate(turns[idx].address, 48) : "(no address yet)";
+        numEl.innerHTML = `turn ${idx+1}${turns[idx].label ? " · " + escapeHtml(turns[idx].label) : ""}${renderTurnTime(turns[idx])}`;
+      }
+    });
+  });
+
+  container.querySelectorAll('.read-btn').forEach(b => {
+    b.addEventListener('click', e => {
+      e.stopPropagation();
+      const idx = +b.dataset.idx;
+      const val = b.dataset.read;
+      turns[idx].read = turns[idx].read === val ? "unset" : val;
+      render();
+    });
+  });
+
+  container.querySelectorAll('[data-remove]').forEach(b => {
+    b.addEventListener('click', e => {
+      e.stopPropagation();
+      const idx = +b.dataset.remove;
+      turns.splice(idx, 1);
+      render();
+    });
+  });
+}
+
+function truncate(s, n){ return s.length > n ? s.slice(0, n) + "…" : s; }
+function escapeHtml(s){
+  return (s || "").replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+}
+function escapeAttr(s){
+  return (s || "").replace(/"/g, '&quot;');
+}
+
+document.getElementById('addTurnBtn').addEventListener('click', () => {
+  turns.forEach(t => t.open = false);
+  turns.push(newTurn());
+  render();
+});
+
+document.getElementById('loadSampleBtn').addEventListener('click', () => {
+  if (turns.length && !confirm("Add v0.1 / v0.2 as the first two turns, above any turns already here?")) return;
+  turns = SAMPLE.map(t => ({...t, id: nextId++})).concat(turns);
+  render();
+});
+
+document.getElementById('exportBtn').addEventListener('click', () => {
+  const data = turns.map(({id, open, ...rest}) => rest);
+  const blob = new Blob([JSON.stringify(data, null, 2)], {type: "application/json"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = "aeti-trial-log.json";
+  a.click();
+  URL.revokeObjectURL(url);
+});
+
+document.getElementById('importBtn').addEventListener('click', () => {
+  document.getElementById('importFile').click();
+});
+
+document.getElementById('importFile').addEventListener('change', e => {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = evt => {
+    try {
+      const data = JSON.parse(evt.target.result);
+      const loaded = data.map(t => ({
+        id: nextId++,
+        label: t.label || "",
+        address: t.address || "",
+        prediction: t.prediction || "",
+        observation: t.observation || "",
+        read: t.read || "unset",
+        comment: t.comment || "",
+        committedAt: t.committedAt || null,
+        observedAt: t.observedAt || null,
+        open: false
+      }));
+      turns = turns.concat(loaded);
+      render();
+    } catch (err) {
+      alert("Couldn't parse that file as JSON trial data.");
+    }
+  };
+  reader.readAsText(file);
+  e.target.value = "";
+});
+
+// ---- File System Access API: direct read/write of log/trials.json ----
+const FS_SUPPORTED = 'showDirectoryPicker' in window;
+let fileHandle = null;
+const connState = document.getElementById('connState');
+
+function updateConnState(msg, cls){
+  if (msg !== undefined){
+    connState.textContent = msg;
+    connState.className = 'conn-state' + (cls ? ' ' + cls : '');
+    return;
+  }
+  if (fileHandle){
+    const n = turns.length;
+    connState.textContent = 'Connected · log/trials.json · ' + n + ' turn' + (n === 1 ? '' : 's') + ' loaded. "Save to file" writes the current turns back.';
+    connState.className = 'conn-state live';
+  } else {
+    connState.textContent = 'Not connected to a project folder — edits stay in this tab until you Export JSON or Save to file.';
+    connState.className = 'conn-state';
+  }
+}
+
+async function connectFolder(){
+  try {
+    const dir = await window.showDirectoryPicker();
+    const logDir = await dir.getDirectoryHandle('log', { create: true });
+    fileHandle = await logDir.getFileHandle('trials.json', { create: true });
+    const text = await (await fileHandle.getFile()).text();
+    let data = [];
+    if (text.trim()){
+      data = JSON.parse(text);
+      if (!Array.isArray(data)) throw new Error('trials.json is not a JSON array');
+    }
+    turns = data.map(t => ({
+      id: nextId++,
+      label: t.label || "",
+      address: t.address || "",
+      prediction: t.prediction || "",
+      observation: t.observation || "",
+      read: t.read || "unset",
+      comment: t.comment || "",
+      committedAt: t.committedAt || null,
+      observedAt: t.observedAt || null,
+      open: false
+    }));
+    updateConnState();
+    render();
+  } catch (err){
+    if (err && err.name === 'AbortError') return;
+    alert("Couldn't open log/trials.json:\n" + (err && err.message ? err.message : err)
+      + "\n\nIf this page was opened directly as a file:// URL, serve the repo instead —\n"
+      + "run  python3 -m http.server  in the project folder and open\n"
+      + "http://localhost:8000/trial-viewer.html");
+  }
+}
+
+async function saveToFile(){
+  if (!fileHandle){ alert("Connect to a project folder first, or use Export JSON."); return; }
+  try {
+    const data = turns.map(({id, open, ...rest}) => rest);
+    const w = await fileHandle.createWritable();
+    await w.write(JSON.stringify(data, null, 2));
+    await w.close();
+    const n = turns.length;
+    updateConnState('Saved · log/trials.json · ' + n + ' turn' + (n === 1 ? '' : 's') + ' · ' + fmtTime(new Date().toISOString()), 'saved');
+  } catch (err){
+    alert("Save failed:\n" + (err && err.message ? err.message : err));
+  }
+}
+
+document.getElementById('connectBtn').addEventListener('click', connectFolder);
+document.getElementById('saveFileBtn').addEventListener('click', saveToFile);
+
+if (!FS_SUPPORTED){
+  const cb = document.getElementById('connectBtn');
+  const sb = document.getElementById('saveFileBtn');
+  cb.disabled = true;
+  sb.disabled = true;
+  cb.title = sb.title = "This browser has no File System Access API — use Import / Export JSON";
+  updateConnState('File System Access API unavailable in this browser (Safari, Firefox) — use the manual Import / Export JSON buttons. Chrome or Edge on desktop enables direct read/write of log/trials.json.');
+}
+
+render();
+</script>
+</body>
+</html>

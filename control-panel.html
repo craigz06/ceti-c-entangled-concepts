@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AETI Trial Log — Control Panel</title>
+<style>
+  :root{
+    --paper:#eceff1;
+    --paper-raised:#f6f8f9;
+    --ink:#1b1e21;
+    --ink-soft:#565d63;
+    --rule:#c7ccd0;
+    --warm:#b3672c;
+    --warm-bg:#f4e6d8;
+    --cool:#2c5f8a;
+    --cool-bg:#dbe6ee;
+    --flat:#6b7075;
+    --flat-bg:#e2e4e6;
+    --parrot:#6d5a8a;
+    --parrot-bg:#e6e1ee;
+    --mono: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
+    --sans: "IBM Plex Sans", "Inter", -apple-system, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.5;
+    padding:32px 20px 80px;
+  }
+  .wrap{max-width:760px;margin:0 auto;}
+
+  header{margin-bottom:20px;}
+  header .kicker{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-soft);
+    letter-spacing:0.02em;
+    margin-bottom:6px;
+  }
+  h1{font-size:22px;font-weight:600;margin:0 0 4px;}
+  header p{color:var(--ink-soft);font-size:14px;margin:0;max-width:60ch;}
+
+  .toolbar{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    align-items:center;
+    margin:20px 0 20px;
+    padding-bottom:20px;
+    border-bottom:1px solid var(--rule);
+  }
+  button{
+    font-family:var(--sans);
+    font-size:13px;
+    padding:8px 14px;
+    background:var(--paper-raised);
+    border:1px solid var(--rule);
+    border-radius:3px;
+    color:var(--ink);
+    cursor:pointer;
+  }
+  button:hover{border-color:var(--ink-soft);}
+  button:disabled{opacity:0.4;cursor:not-allowed;}
+  button:disabled:hover{border-color:var(--rule);}
+  button.primary{
+    background:var(--ink);
+    color:var(--paper-raised);
+    border-color:var(--ink);
+  }
+  button.primary:hover{opacity:0.88;}
+  button.primary:disabled:hover{opacity:0.4;}
+  a.tool-link{
+    font-family:var(--sans);
+    font-size:13px;
+    padding:8px 14px;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    color:var(--ink);
+    text-decoration:none;
+    background:var(--paper-raised);
+  }
+  a.tool-link:hover{border-color:var(--ink-soft);}
+
+  .status{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-bottom:24px;
+  }
+  .status .dot{
+    display:inline-block;
+    width:7px;height:7px;
+    border-radius:50%;
+    background:var(--flat);
+    margin-right:8px;
+    vertical-align:middle;
+  }
+  .status.connected .dot{background:var(--cool);}
+  .status.awaiting .dot{background:var(--warm);}
+
+  .unsupported{
+    display:none;
+    background:var(--warm-bg);
+    border:1px solid var(--warm);
+    color:var(--warm);
+    border-radius:4px;
+    padding:14px 18px;
+    font-size:13px;
+    line-height:1.55;
+    margin-bottom:24px;
+  }
+  .unsupported code{font-family:var(--mono);font-size:12px;}
+
+  .panel{
+    background:var(--paper-raised);
+    border:1px solid var(--rule);
+    border-radius:4px;
+    padding:4px 20px 20px;
+    margin-bottom:28px;
+  }
+  .panel.locked{opacity:0.5;pointer-events:none;}
+
+  .phase{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:18px 0 2px;
+    padding-bottom:8px;
+    border-bottom:1px solid var(--rule);
+  }
+
+  .field{margin-top:16px;}
+  .field label{
+    display:block;
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--ink-soft);
+    letter-spacing:0.02em;
+    margin-bottom:5px;
+  }
+  .field textarea, .field input[type=text]{
+    width:100%;
+    font-family:var(--mono);
+    font-size:13px;
+    line-height:1.5;
+    padding:10px 12px;
+    border:1px solid var(--rule);
+    border-radius:3px;
+    background:var(--paper);
+    color:var(--ink);
+    resize:vertical;
+  }
+  .field textarea{min-height:64px;}
+  .field textarea.tall{min-height:120px;}
+  .field textarea:disabled, .field input:disabled{
+    background:var(--flat-bg);
+    color:var(--ink-soft);
+    cursor:not-allowed;
+  }
+
+  .committed-block{
+    margin-top:16px;
+    border-left:2px solid var(--cool);
+    padding-left:14px;
+  }
+  .committed-block .cb-label{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--ink-soft);
+    letter-spacing:0.02em;
+    margin-bottom:5px;
+  }
+  .committed-block .cb-value{
+    font-family:var(--mono);
+    font-size:13px;
+    white-space:pre-wrap;
+    line-height:1.5;
+  }
+  .committed-block .cb-time{
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--cool);
+    margin-top:6px;
+  }
+
+  .actions{
+    margin-top:20px;
+    display:flex;
+    gap:10px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .actions .hint{font-family:var(--mono);font-size:11px;color:var(--ink-soft);}
+
+  .recent h2{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    font-weight:400;
+    margin:0 0 6px;
+  }
+  .recent-item{
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+    padding:9px 0;
+    border-top:1px solid var(--rule);
+    font-size:13px;
+  }
+  .recent-item .ri-label{
+    font-family:var(--mono);
+    font-size:12px;
+    color:var(--ink);
+    min-width:74px;
+  }
+  .recent-item .ri-state{flex:1;color:var(--ink-soft);font-size:12px;font-family:var(--mono);}
+  .badge{
+    font-family:var(--mono);
+    font-size:11px;
+    padding:3px 8px;
+    border-radius:3px;
+    white-space:nowrap;
+  }
+  .badge.warmer{background:var(--warm-bg);color:var(--warm);}
+  .badge.colder{background:var(--cool-bg);color:var(--cool);}
+  .badge.flat{background:var(--flat-bg);color:var(--flat);}
+  .badge.parrot{background:var(--parrot-bg);color:var(--parrot);}
+
+  .empty{
+    padding:14px 0 4px;
+    color:var(--ink-soft);
+    font-size:13px;
+    font-family:var(--mono);
+  }
+
+  footer{
+    margin-top:28px;
+    padding-top:16px;
+    border-top:1px solid var(--rule);
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--ink-soft);
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="kicker">CETi-C / AETI — predict · commit · observe</div>
+    <h1>Control panel</h1>
+    <p>The commit-before-observe instrument. Write the address and the
+    prediction, commit them (timestamped, written straight to
+    <code>log/trials.json</code>), and only then record what came
+    back. A committed prediction can't be edited here — a changed
+    prediction is a new turn. Reads and comments stay the trial
+    viewer's job.</p>
+  </header>
+
+  <div class="toolbar">
+    <button class="primary" id="connectBtn">Connect to project folder</button>
+    <a class="tool-link" id="viewerLink" href="trial-viewer.html" target="_blank" rel="noopener">Open trial viewer &rarr;</a>
+  </div>
+
+  <div class="unsupported" id="unsupported">
+    This instrument needs the <strong>File System Access API</strong>
+    (<code>window.showDirectoryPicker</code>) to read and write
+    <code>log/trials.json</code> directly, with no server. Use
+    <strong>Chrome</strong> or <strong>Edge</strong> on the desktop.
+    The trial viewer still runs in this browser — it keeps manual
+    Import / Export JSON as a fallback.
+  </div>
+
+  <div class="status" id="status"><span class="dot"></span><span id="statusText">not connected</span></div>
+
+  <div class="panel locked" id="panel">
+
+    <div id="composePhase">
+      <div class="phase">Predict &amp; commit</div>
+      <div class="field">
+        <label>label — v0.4, "turn 5", etc.</label>
+        <input type="text" id="f-label" placeholder="short handle for this turn" autocomplete="off">
+      </div>
+      <div class="field">
+        <label>address / constraints used this turn</label>
+        <textarea id="f-address" class="tall" placeholder="the full prompt / coordinates dialed in for this turn"></textarea>
+      </div>
+      <div class="field">
+        <label>prediction — committed before observing</label>
+        <textarea id="f-prediction" placeholder="what you expect, before you see any output"></textarea>
+      </div>
+      <div class="actions">
+        <button class="primary" id="commitBtn" disabled>Commit prediction</button>
+        <span class="hint" id="commitHint">connect + fill all three fields</span>
+      </div>
+    </div>
+
+    <div id="observePhase" hidden>
+      <div class="phase">Observe</div>
+      <div class="committed-block">
+        <div class="cb-label">label</div>
+        <div class="cb-value" id="c-label"></div>
+      </div>
+      <div class="committed-block">
+        <div class="cb-label">address — committed</div>
+        <div class="cb-value" id="c-address"></div>
+      </div>
+      <div class="committed-block">
+        <div class="cb-label">prediction — committed, read-only</div>
+        <div class="cb-value" id="c-prediction"></div>
+        <div class="cb-time" id="c-committedAt"></div>
+      </div>
+      <div class="field">
+        <label>observation — raw output, unedited</label>
+        <textarea id="f-observation" class="tall" placeholder="paste the raw output exactly as returned"></textarea>
+      </div>
+      <div class="actions">
+        <button class="primary" id="observeBtn" disabled>Save observation</button>
+        <span class="hint" id="observeHint">paste the output to enable</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="recent">
+    <h2>Recent turns — glance only</h2>
+    <div id="recentList"><div class="empty">nothing logged yet</div></div>
+  </div>
+
+  <footer id="footer">log/trials.json — not connected</footer>
+</div>
+
+<script>
+const SUPPORTED = 'showDirectoryPicker' in window;
+
+let fileHandle = null;
+let trials = [];
+
+const $ = id => document.getElementById(id);
+const els = {
+  connectBtn: $('connectBtn'),
+  unsupported: $('unsupported'),
+  status: $('status'),
+  statusText: $('statusText'),
+  panel: $('panel'),
+  composePhase: $('composePhase'),
+  observePhase: $('observePhase'),
+  fLabel: $('f-label'),
+  fAddress: $('f-address'),
+  fPrediction: $('f-prediction'),
+  commitBtn: $('commitBtn'),
+  commitHint: $('commitHint'),
+  cLabel: $('c-label'),
+  cAddress: $('c-address'),
+  cPrediction: $('c-prediction'),
+  cCommittedAt: $('c-committedAt'),
+  fObservation: $('f-observation'),
+  observeBtn: $('observeBtn'),
+  observeHint: $('observeHint'),
+  recentList: $('recentList'),
+  footer: $('footer')
+};
+
+if (!SUPPORTED){
+  els.unsupported.style.display = 'block';
+  els.connectBtn.disabled = true;
+  els.statusText.textContent = 'unavailable — Chrome or Edge required';
+}
+
+function fmtTime(iso){
+  if (!iso) return '';
+  const d = new Date(iso);
+  if (isNaN(d)) return String(iso);
+  return d.toISOString().replace('T', ' ').replace(/\.\d+Z$/, 'Z');
+}
+
+function escapeHtml(s){
+  return (s || '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+}
+
+function lastTurn(){ return trials.length ? trials[trials.length - 1] : null; }
+
+function awaitingObservation(){
+  const t = lastTurn();
+  return !!(t && t.committedAt && !t.observedAt);
+}
+
+async function readTrialsFile(){
+  const text = await (await fileHandle.getFile()).text();
+  if (!text.trim()) return [];
+  const data = JSON.parse(text);
+  if (!Array.isArray(data)) throw new Error('trials.json is not a JSON array');
+  return data;
+}
+
+async function writeTrialsFile(){
+  const w = await fileHandle.createWritable();
+  await w.write(JSON.stringify(trials, null, 2));
+  await w.close();
+}
+
+async function connect(){
+  try {
+    const dir = await window.showDirectoryPicker();
+    const logDir = await dir.getDirectoryHandle('log', { create: true });
+    fileHandle = await logDir.getFileHandle('trials.json', { create: true });
+    trials = await readTrialsFile();
+  } catch (err){
+    if (err && err.name === 'AbortError') return;
+    alert("Couldn't open log/trials.json:\n" + (err && err.message ? err.message : err)
+      + "\n\nIf this page was opened directly as a file:// URL, serve the repo instead —\n"
+      + "run  python3 -m http.server  in the project folder and open\n"
+      + "http://localhost:8000/control-panel.html");
+    return;
+  }
+  els.panel.classList.remove('locked');
+  if (awaitingObservation()) enterObservePhase();
+  else enterComposePhase();
+  refresh();
+}
+
+function refresh(){
+  updateStatus();
+  renderRecent();
+  const n = trials.length;
+  els.footer.textContent = fileHandle
+    ? 'log/trials.json — connected · ' + n + ' turn' + (n === 1 ? '' : 's')
+    : 'log/trials.json — not connected';
+}
+
+function updateStatus(){
+  els.status.classList.remove('connected', 'awaiting');
+  if (!fileHandle){
+    els.statusText.textContent = SUPPORTED ? 'not connected' : 'unavailable — Chrome or Edge required';
+    return;
+  }
+  const n = trials.length;
+  const base = n + ' turn' + (n === 1 ? '' : 's');
+  if (awaitingObservation()){
+    els.status.classList.add('awaiting');
+    const t = lastTurn();
+    els.statusText.textContent = base + ' · last turn (' + (t.label || 'unlabeled') + ') awaiting an observation';
+  } else {
+    els.status.classList.add('connected');
+    els.statusText.textContent = base + ' · ready for a new turn';
+  }
+}
+
+function enterComposePhase(){
+  els.composePhase.hidden = false;
+  els.observePhase.hidden = true;
+  els.fLabel.value = '';
+  els.fAddress.value = '';
+  els.fPrediction.value = '';
+  validateCompose();
+  els.fLabel.focus();
+}
+
+function enterObservePhase(){
+  const t = lastTurn();
+  els.composePhase.hidden = true;
+  els.observePhase.hidden = false;
+  els.cLabel.textContent = t.label || '(unlabeled)';
+  els.cAddress.textContent = t.address || '';
+  els.cPrediction.textContent = t.prediction || '';
+  els.cCommittedAt.textContent = t.committedAt ? 'committed ' + fmtTime(t.committedAt) : '';
+  els.fObservation.value = t.observation || '';
+  validateObserve();
+  els.fObservation.focus();
+}
+
+function validateCompose(){
+  const ok = !!fileHandle
+    && els.fLabel.value.trim() !== ''
+    && els.fAddress.value.trim() !== ''
+    && els.fPrediction.value.trim() !== '';
+  els.commitBtn.disabled = !ok;
+  els.commitHint.textContent = !fileHandle
+    ? 'connect + fill all three fields'
+    : (ok ? 'writes a timestamped entry to log/trials.json' : 'fill all three fields');
+}
+
+function validateObserve(){
+  const ok = !!fileHandle && els.fObservation.value.trim() !== '';
+  els.observeBtn.disabled = !ok;
+  els.observeHint.textContent = ok ? 'sets observedAt and writes to disk' : 'paste the output to enable';
+}
+
+['input', 'change'].forEach(ev => {
+  els.fLabel.addEventListener(ev, validateCompose);
+  els.fAddress.addEventListener(ev, validateCompose);
+  els.fPrediction.addEventListener(ev, validateCompose);
+  els.fObservation.addEventListener(ev, validateObserve);
+});
+
+els.connectBtn.addEventListener('click', connect);
+
+els.commitBtn.addEventListener('click', async () => {
+  if (els.commitBtn.disabled) return;
+  const turn = {
+    label: els.fLabel.value.trim(),
+    address: els.fAddress.value.trim(),
+    prediction: els.fPrediction.value.trim(),
+    observation: "",
+    read: "unset",
+    comment: "",
+    committedAt: new Date().toISOString(),
+    observedAt: null
+  };
+  trials.push(turn);
+  try {
+    await writeTrialsFile();
+  } catch (err){
+    trials.pop();
+    alert("Write failed — nothing committed:\n" + (err && err.message ? err.message : err));
+    return;
+  }
+  enterObservePhase();
+  refresh();
+});
+
+els.observeBtn.addEventListener('click', async () => {
+  if (els.observeBtn.disabled) return;
+  const t = lastTurn();
+  if (!t) return;
+  const prevObs = t.observation, prevAt = t.observedAt;
+  t.observation = els.fObservation.value;
+  t.observedAt = new Date().toISOString();
+  try {
+    await writeTrialsFile();
+  } catch (err){
+    t.observation = prevObs;
+    t.observedAt = prevAt;
+    alert("Write failed — observation not saved:\n" + (err && err.message ? err.message : err));
+    return;
+  }
+  enterComposePhase();
+  refresh();
+});
+
+function renderRecent(){
+  if (!trials.length){
+    els.recentList.innerHTML = '<div class="empty">nothing logged yet</div>';
+    return;
+  }
+  els.recentList.innerHTML = trials.slice(-8).reverse().map((t, i) => {
+    const n = trials.length - i;
+    let state;
+    if (!t.committedAt) state = 'draft — no commit';
+    else if (!t.observedAt) state = 'committed ' + fmtTime(t.committedAt) + ' · awaiting observation';
+    else state = 'observed ' + fmtTime(t.observedAt);
+    const badge = (t.read && t.read !== 'unset')
+      ? '<span class="badge ' + escapeHtml(t.read) + '">' + escapeHtml(t.read) + '</span>'
+      : '';
+    return '<div class="recent-item">'
+      + '<span class="ri-label">' + escapeHtml(('#' + n + ' ' + (t.label || '')).trim()) + '</span>'
+      + '<span class="ri-state">' + escapeHtml(state) + '</span>'
+      + badge
+      + '</div>';
+  }).join('');
+}
+
+refresh();
+</script>
+</body>
+</html>
