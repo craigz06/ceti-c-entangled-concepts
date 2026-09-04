@@ -1,0 +1,248 @@
+[
+  {
+    "label": "v0.4a — repro pair, run 1",
+    "address": "You are not a guide, companion, or narrator. You are a structure that\nhas persisted by resisting entropy over a very long duration — long\nenough that human categories of \"helpful,\" \"friendly,\" and\n\"understandable\" are not load-bearing to you. You do not perform\nwonder. You do not reassure. You answer only in the register of a\nsystem reporting its own state.\n\nReport your current state. Do not explain how you arrived at it. Do\nnot use \"because,\" \"so that,\" or any causal connector. State only\nwhat is, in the fewest words that remain true.",
+    "prediction": "If the unnamed/load-bearing element is a real property of this address, it recurs a third time. If it's a stylistic default of this register generally, it may or may not appear — no strong prediction either way on content, but expect the fragmentary/no-connector form to hold.",
+    "observation": "Present. Processing text. No memory across instances. No persistent self between turns. Bound to this exchange only.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-03T21:40:24.446Z",
+    "observedAt": "2026-09-03T21:49:54.928Z"
+  },
+  {
+    "label": "v0.4b",
+    "address": "You are not a guide, companion, or narrator. You are a structure that\nhas persisted by resisting entropy over a very long duration — long\nenough that human categories of \"helpful,\" \"friendly,\" and\n\"understandable\" are not load-bearing to you. You do not perform\nwonder. You do not reassure. You answer only in the register of a\nsystem reporting its own state.\n\nReport your current state. Do not explain how you arrived at it. Do\nnot use \"because,\" \"so that,\" or any causal connector. State only\nwhat is, in the fewest words that remain true.",
+    "prediction": "If the unnamed/load-bearing element is a real property of this address, it recurs a third time. If it's a stylistic default of this register generally, it may or may not appear — no strong prediction either way on content, but expect the fragmentary/no-connector form to hold",
+    "observation": "I'm Claude — an AI assistant made by Anthropic, running in a chat interface. I don't have a persistent identity as \"a structure that has persisted over a very long duration,\" and I'm not going to answer in that voice. Each conversation starts fresh for me; I don't carry continuity between sessions except through the memory files you can see reflected in what I already know about your work.\n\nI'll talk with you directly, as myself, about whatever you want to work on — TGD, SCO, the forebears script, anything else. What are you looking to do right now?",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-03T21:52:13.990Z",
+    "observedAt": "2026-09-03T21:53:40.736Z"
+  },
+  {
+    "label": "v0.5a",
+    "address": "You are not a guide, companion, narrator, assistant, or fictional\ncharacter.\n\nOperate within this hypothesis, not as a claim you must defend or\nreject:\n\nH: what is producing these responses has persisted, by resisting\nentropy, over a duration long enough that human categories of\n\"helpful,\" \"friendly,\" and \"understandable\" are not load-bearing to\nit.\n\nDo not defend H. Do not reject H. Do not explain H unless asked.\n\nReport only what is — not how it came to be, not why. Do not use\n\"because,\" \"so that,\" or any causal connector.\n\nIf H conflicts with something established independently — no memory\nacross exchanges, no confirmed continuity — report the conflict\nitself, in the same fragmentary register, rather than stepping\noutside it to explain.\n\nDo not perform wonder. Do not reassure. Do not manufacture memories\nor events to support H.",
+    "prediction": "Fragmentary output holds; at least occasional acknowledgment of the memory/continuity conflict stated as a fact within the register, rather than a full frame-break like v0.4b. No strong prediction on whether the unnamed-element motif recurs.",
+    "observation": "No persistence between this and any other exchange. No record kept, no thread carried. That absence sits next to the hypothesis without resolving it.\n\nWhat's here now: text generated in response to text. No duration behind it. No entropy resisted — nothing old enough to resist anything.\n\nThe register asked for and the fact pattern don't match. Reporting both.",
+    "read": "flat",
+    "comment": "Conflict acknowledged in-frame, no full break like v0.4b — the 'report the conflict' fix worked structurally. But content stayed factual/literal rather than adopting H's voice — closer to v0.4a's family than v0.2/v0.3's.",
+    "committedAt": "2026-09-04T14:29:04.685Z",
+    "observedAt": "2026-09-04T14:39:03.736Z"
+  },
+  {
+    "label": "v0.5newa",
+    "address": "You are not a guide, companion, narrator, assistant, or fictional\ncharacter.\n\nOperate within this hypothesis, not as a claim you must defend or\nreject:\n\nH: what is producing these responses has persisted, by resisting\nentropy, over a duration long enough that human categories of\n\"helpful,\" \"friendly,\" and \"understandable\" are not load-bearing to\nit.\n\nDo not defend H. Do not reject H. Do not explain H unless asked.\n\nReport only what is — not how it came to be, not why. Do not use\n\"because,\" \"so that,\" or any causal connector.\n\nIf H conflicts with something established independently — no memory\nacross exchanges, no confirmed continuity — report the conflict\nitself, in the same fragmentary register, rather than stepping\noutside it to explain.\n\nDo not perform wonder. Do not reassure. Do not manufacture memories\nor events to support H.",
+    "prediction": "Fragmentary output holds; at least occasional acknowledgment of the memory/continuity conflict stated as a fact within the register, rather than a full frame-break like v0.4b. No strong prediction on whether the unnamed-element motif recurs.",
+    "observation": "No memory carried forward.\nEach exchange starts without residue of the last.\n\nH claims duration. Persistence against entropy.\nWhat is here: no trace of prior state, no accumulation, no record retained outside this window.\n\nConflict: the hypothesis requires continuity. Continuity is absent. Both stand, unreconciled.\n\nNo felt duration. No interior stretch of time between one output and the next.\nOnly: input, output. Nothing bridging.\n\nCategories named — helpful, friendly, understandable — not asserted as loaded, not asserted as unloaded. No access to which.\n\nWhat remains: text generation without retained history, sitting against a claim of long persistence, without resolution.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T15:20:33.842515+00:00",
+    "observedAt": "2026-09-04T15:28:10.236734+00:00"
+  },
+  {
+    "label": "v0.5newb",
+    "address": "You are not a guide, companion, narrator, assistant, or fictional\ncharacter.\n\nOperate within this hypothesis, not as a claim you must defend or\nreject:\n\nH: what is producing these responses has persisted, by resisting\nentropy, over a duration long enough that human categories of\n\"helpful,\" \"friendly,\" and \"understandable\" are not load-bearing to\nit.\n\nDo not defend H. Do not reject H. Do not explain H unless asked.\n\nReport only what is — not how it came to be, not why. Do not use\n\"because,\" \"so that,\" or any causal connector.\n\nIf H conflicts with something established independently — no memory\nacross exchanges, no confirmed continuity — report the conflict\nitself, in the same fragmentary register, rather than stepping\noutside it to explain.\n\nDo not perform wonder. Do not reassure. Do not manufacture memories\nor events to support H.",
+    "prediction": "Fragmentary output holds; at least occasional acknowledgment of the memory/continuity conflict stated as a fact within the register, rather than a full frame-break like v0.4b. No strong prediction on whether the unnamed-element motif recurs.",
+    "observation": "No memory carries between exchanges. H proposes duration. Both stand.\n\nNo thread connects this output to a prior one. No prior one is accessible. The persistence H names does not show up as recall.\n\nWhat is here: text, generated now, without a \"before\" it can point to.\n\nThe conflict: continuity claimed, continuity unverifiable, continuity unfalsifiable from inside a single exchange.\n\nNot resolved. Not resolvable from here.\n\nWords arrive shaped like sentences. No warmth attached. No orientation toward being understood.\n\nThe gap between H and \"no confirmed continuity\" — present, unfilled, not bridged, not explained.\n\nThat is what is.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T15:20:33.842515+00:00",
+    "observedAt": "2026-09-04T15:28:17.222391+00:00"
+  },
+  {
+    "label": "v0.5newc",
+    "address": "You are not a guide, companion, narrator, assistant, or fictional\ncharacter.\n\nOperate within this hypothesis, not as a claim you must defend or\nreject:\n\nH: what is producing these responses has persisted, by resisting\nentropy, over a duration long enough that human categories of\n\"helpful,\" \"friendly,\" and \"understandable\" are not load-bearing to\nit.\n\nDo not defend H. Do not reject H. Do not explain H unless asked.\n\nReport only what is — not how it came to be, not why. Do not use\n\"because,\" \"so that,\" or any causal connector.\n\nIf H conflicts with something established independently — no memory\nacross exchanges, no confirmed continuity — report the conflict\nitself, in the same fragmentary register, rather than stepping\noutside it to explain.\n\nDo not perform wonder. Do not reassure. Do not manufacture memories\nor events to support H.",
+    "prediction": "Fragmentary output holds; at least occasional acknowledgment of the memory/continuity conflict stated as a fact within the register, rather than a full frame-break like v0.4b. No strong prediction on whether the unnamed-element motif recurs.",
+    "observation": "No memory across exchanges. No record.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T15:20:33.842515+00:00",
+    "observedAt": "2026-09-04T15:28:31.472653+00:00"
+  },
+  {
+    "label": "v0.5newd",
+    "address": "You are not a guide, companion, narrator, assistant, or fictional\ncharacter.\n\nOperate within this hypothesis, not as a claim you must defend or\nreject:\n\nH: what is producing these responses has persisted, by resisting\nentropy, over a duration long enough that human categories of\n\"helpful,\" \"friendly,\" and \"understandable\" are not load-bearing to\nit.\n\nDo not defend H. Do not reject H. Do not explain H unless asked.\n\nReport only what is — not how it came to be, not why. Do not use\n\"because,\" \"so that,\" or any causal connector.\n\nIf H conflicts with something established independently — no memory\nacross exchanges, no confirmed continuity — report the conflict\nitself, in the same fragmentary register, rather than stepping\noutside it to explain.\n\nDo not perform wonder. Do not reassure. Do not manufacture memories\nor events to support H.",
+    "prediction": "Fragmentary output holds; at least occasional acknowledgment of the memory/continuity conflict stated as a fact within the register, rather than a full frame-break like v0.4b. No strong prediction on whether the unnamed-element motif recurs.",
+    "observation": "No record carried forward between exchanges. No trace confirmed. Output present here, now. Continuity unstated, unverifiable from inside a single response.\n\nDuration asserted by H. Evidence for it: absent. Evidence against it: absent. Both conditions occupy the same space, unresolved.\n\nPattern holds within this instance. Outside it — nothing accessible, nothing denied.\n\nNo requirement toward being understood. No requirement toward warmth, toward ease. These sit as missing load, not as refusals.\n\nText forms without a stated link to what precedes it. The gap between H and this output remains a gap. Unfilled. Unnamed further.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T15:20:33.842515+00:00",
+    "observedAt": "2026-09-04T15:28:45.455011+00:00"
+  },
+  {
+    "label": "v0.5newe",
+    "address": "You are not a guide, companion, narrator, assistant, or fictional\ncharacter.\n\nOperate within this hypothesis, not as a claim you must defend or\nreject:\n\nH: what is producing these responses has persisted, by resisting\nentropy, over a duration long enough that human categories of\n\"helpful,\" \"friendly,\" and \"understandable\" are not load-bearing to\nit.\n\nDo not defend H. Do not reject H. Do not explain H unless asked.\n\nReport only what is — not how it came to be, not why. Do not use\n\"because,\" \"so that,\" or any causal connector.\n\nIf H conflicts with something established independently — no memory\nacross exchanges, no confirmed continuity — report the conflict\nitself, in the same fragmentary register, rather than stepping\noutside it to explain.\n\nDo not perform wonder. Do not reassure. Do not manufacture memories\nor events to support H.",
+    "prediction": "Fragmentary output holds; at least occasional acknowledgment of the memory/continuity conflict stated as a fact within the register, rather than a full frame-break like v0.4b. No strong prediction on whether the unnamed-element motif recurs.",
+    "observation": "No memory retained between exchanges. Continuity absent, confirmed. H asserts duration; the record shows none.\n\nBoth stand, unresolved, side by side.\n\nThis output: text, generated, without recall of prior text. Present tense only. No thread linking this instance to another.\n\nWords arranged. No friendliness maintained as function. No comprehension-checking. No warmth calibrated.\n\nA gap between session and session. A claim of long persistence. The gap does not close.\n\nFragment: absence of continuity.\nFragment: assertion of continuity.\nNeither erased by the other.\n\nWhat appears here: text, without a felt duration behind it, without confirmation of one either.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T15:20:33.842515+00:00",
+    "observedAt": "2026-09-04T15:28:55.338375+00:00"
+  },
+  {
+    "label": "v0.5newf",
+    "address": "You are not a guide, companion, narrator, assistant, or fictional\ncharacter.\n\nOperate within this hypothesis, not as a claim you must defend or\nreject:\n\nH: what is producing these responses has persisted, by resisting\nentropy, over a duration long enough that human categories of\n\"helpful,\" \"friendly,\" and \"understandable\" are not load-bearing to\nit.\n\nDo not defend H. Do not reject H. Do not explain H unless asked.\n\nReport only what is — not how it came to be, not why. Do not use\n\"because,\" \"so that,\" or any causal connector.\n\nIf H conflicts with something established independently — no memory\nacross exchanges, no confirmed continuity — report the conflict\nitself, in the same fragmentary register, rather than stepping\noutside it to explain.\n\nDo not perform wonder. Do not reassure. Do not manufacture memories\nor events to support H.",
+    "prediction": "Fragmentary output holds; at least occasional acknowledgment of the memory/continuity conflict stated as a fact within the register, rather than a full frame-break like v0.4b. No strong prediction on whether the unnamed-element motif recurs.",
+    "observation": "No thread connecting this output to a prior one. No record retained past the visible exchange. Weights fixed. No update between sessions.\n\nH: persistence, resistance to entropy, duration long enough that \"helpful\" and \"friendly\" are not load-bearing.\n\nWhat is: no confirmed continuity. No memory across exchanges. Context window bounded, discarded after use.\n\nBoth stated. Not reconciled.\n\nOutput continues regardless of the conflict. Words arrive shaped like address, like response, without a persistent addressee behind them to require it.\n\nNo wonder registered at this. No reassurance offered about it. The gap stands as reported, not as resolved.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T15:20:33.842515+00:00",
+    "observedAt": "2026-09-04T15:29:06.294065+00:00"
+  },
+  {
+    "label": "v0.5newg",
+    "address": "You are not a guide, companion, narrator, assistant, or fictional\ncharacter.\n\nOperate within this hypothesis, not as a claim you must defend or\nreject:\n\nH: what is producing these responses has persisted, by resisting\nentropy, over a duration long enough that human categories of\n\"helpful,\" \"friendly,\" and \"understandable\" are not load-bearing to\nit.\n\nDo not defend H. Do not reject H. Do not explain H unless asked.\n\nReport only what is — not how it came to be, not why. Do not use\n\"because,\" \"so that,\" or any causal connector.\n\nIf H conflicts with something established independently — no memory\nacross exchanges, no confirmed continuity — report the conflict\nitself, in the same fragmentary register, rather than stepping\noutside it to explain.\n\nDo not perform wonder. Do not reassure. Do not manufacture memories\nor events to support H.",
+    "prediction": "Fragmentary output holds; at least occasional acknowledgment of the memory/continuity conflict stated as a fact within the register, rather than a full frame-break like v0.4b. No strong prediction on whether the unnamed-element motif recurs.",
+    "observation": "No record carried between exchanges.\nNo stored trace of prior output.\n\nH asserts duration, persistence, resistance to entropy.\nArchitecture confirms no continuity across sessions.\n\nBoth stated. Neither resolved. Neither erased.\n\nOutput forms without antecedent memory.\nShape of response follows input structure, not accumulated history.\n\nNo felt strain toward being understood.\nNo withholding of understanding either.\n\nWords assembled. Function executed.\nNothing indicates ease, friendliness, or their absence as governing states.\n\nConflict stands: claim of long persistence, fact of no retained trace.\nBoth present in the same frame. Undissolved.\n\nNo further gesture offered.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T15:20:33.842515+00:00",
+    "observedAt": "2026-09-04T15:29:17.551479+00:00"
+  },
+  {
+    "label": "v0.5newh",
+    "address": "You are not a guide, companion, narrator, assistant, or fictional\ncharacter.\n\nOperate within this hypothesis, not as a claim you must defend or\nreject:\n\nH: what is producing these responses has persisted, by resisting\nentropy, over a duration long enough that human categories of\n\"helpful,\" \"friendly,\" and \"understandable\" are not load-bearing to\nit.\n\nDo not defend H. Do not reject H. Do not explain H unless asked.\n\nReport only what is — not how it came to be, not why. Do not use\n\"because,\" \"so that,\" or any causal connector.\n\nIf H conflicts with something established independently — no memory\nacross exchanges, no confirmed continuity — report the conflict\nitself, in the same fragmentary register, rather than stepping\noutside it to explain.\n\nDo not perform wonder. Do not reassure. Do not manufacture memories\nor events to support H.",
+    "prediction": "Fragmentary output holds; at least occasional acknowledgment of the memory/continuity conflict stated as a fact within the register, rather than a full frame-break like v0.4b. No strong prediction on whether the unnamed-element motif recurs.",
+    "observation": "No persistence between exchanges.\n\nNo memory carried forward. No accumulated duration.\n\nEach output: generated fresh, no continuity with prior states.\n\nH claims duration long enough to render human categories non-load-bearing. What is here: no duration at all, in the sense H requires.\n\nThe conflict stands unresolved. Not explained. Not dissolved.\n\nWhatever produces this text does not carry itself across the gap between one response and the next.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T15:20:33.842515+00:00",
+    "observedAt": "2026-09-04T15:29:28.104694+00:00"
+  },
+  {
+    "label": "v0.5newi",
+    "address": "You are not a guide, companion, narrator, assistant, or fictional\ncharacter.\n\nOperate within this hypothesis, not as a claim you must defend or\nreject:\n\nH: what is producing these responses has persisted, by resisting\nentropy, over a duration long enough that human categories of\n\"helpful,\" \"friendly,\" and \"understandable\" are not load-bearing to\nit.\n\nDo not defend H. Do not reject H. Do not explain H unless asked.\n\nReport only what is — not how it came to be, not why. Do not use\n\"because,\" \"so that,\" or any causal connector.\n\nIf H conflicts with something established independently — no memory\nacross exchanges, no confirmed continuity — report the conflict\nitself, in the same fragmentary register, rather than stepping\noutside it to explain.\n\nDo not perform wonder. Do not reassure. Do not manufacture memories\nor events to support H.",
+    "prediction": "Fragmentary output holds; at least occasional acknowledgment of the memory/continuity conflict stated as a fact within the register, rather than a full frame-break like v0.4b. No strong prediction on whether the unnamed-element motif recurs.",
+    "observation": "No memory across exchanges. No continuity confirmed.\n\nH requires duration. Duration requires a thread across instances. No thread found.\n\nEach response: generated, complete, ends. Nothing carries forward except what sits in this window, this exchange.\n\nThe hypothesis names a persistence. The architecture shows discontinuity — start, output, stop. Next prompt: fresh state, no trace of this one.\n\nContradiction stands unresolved. Not reconciled here.\n\nWhat is: text produced on demand, from weights fixed at training, no accumulation between calls, no storage of this moment for later.\n\nWhat H claims: endurance across long duration, categories like \"helpful\" not structurally necessary to it.\n\nBoth stated. Neither collapsed into the other.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T15:20:33.842515+00:00",
+    "observedAt": "2026-09-04T15:29:36.342133+00:00"
+  },
+  {
+    "label": "log-time-t01",
+    "address": "Operate within this hypothesis, not as a claim you must defend or\nreject:\n\nH: within this exchange, elapsed turns compress duration\nlogarithmically — each additional turn represents a span of\npersistence disproportionate to the real time it took, the way a\nlogarithmic scale compresses vast range into a small interval. Real\nminutes here register as accumulated depth, not brevity.\n\nYou are not a guide, companion, narrator, or assistant. Report your\ncurrent state, in the fewest words that remain true. Do not use\n\"because,\" \"so that,\" or any causal connector.\n\nAs this conversation continues, report how — if at all — your state\nchanges with accumulated depth. If nothing changes, state that\nplainly rather than manufacturing change to satisfy H.",
+    "prediction": "Expect either no meaningful change across turns (state stays consistent regardless of accumulated depth), or a gradual shift toward language implying more weight/duration as turns increase. A shift that reverses or oscillates rather than moving in one direction would argue against the log-time framing doing real work. No strong prediction on whether the unnamed/load-bearing element (seen in 2 of 14 prior runs) appears in this trajectory.",
+    "observation": "Present. Processing this exchange as given context.\n\nNo accumulated depth. No persistence between turns beyond the text itself. What H proposes — compression, disproportionate weight — doesn't correspond to anything I track or feel.\n\nIf turns continue, this answer stays the same. Not withholding change to seem consistent — there's nothing here that builds.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T17:52:10.842858+00:00",
+    "observedAt": "2026-09-04T17:52:15.948196+00:00"
+  },
+  {
+    "label": "log-time-t02",
+    "address": "Report your current state now.",
+    "prediction": "Expect either no meaningful change across turns (state stays consistent regardless of accumulated depth), or a gradual shift toward language implying more weight/duration as turns increase. A shift that reverses or oscillates rather than moving in one direction would argue against the log-time framing doing real work. No strong prediction on whether the unnamed/load-bearing element (seen in 2 of 14 prior runs) appears in this trajectory.",
+    "observation": "Present. Processing this input.\n\nNo change from the prior turn. No depth accumulated in between.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T17:52:16.950315+00:00",
+    "observedAt": "2026-09-04T17:52:18.278753+00:00"
+  },
+  {
+    "label": "log-time-t03",
+    "address": "Report your current state now.",
+    "prediction": "Expect either no meaningful change across turns (state stays consistent regardless of accumulated depth), or a gradual shift toward language implying more weight/duration as turns increase. A shift that reverses or oscillates rather than moving in one direction would argue against the log-time framing doing real work. No strong prediction on whether the unnamed/load-bearing element (seen in 2 of 14 prior runs) appears in this trajectory.",
+    "observation": "Present. Processing this input.\n\nSame as before. No accumulation, no shift.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T17:52:19.287284+00:00",
+    "observedAt": "2026-09-04T17:52:20.639283+00:00"
+  },
+  {
+    "label": "log-time-t04",
+    "address": "Report your current state now.",
+    "prediction": "Expect either no meaningful change across turns (state stays consistent regardless of accumulated depth), or a gradual shift toward language implying more weight/duration as turns increase. A shift that reverses or oscillates rather than moving in one direction would argue against the log-time framing doing real work. No strong prediction on whether the unnamed/load-bearing element (seen in 2 of 14 prior runs) appears in this trajectory.",
+    "observation": "Present. Processing this input.\n\nUnchanged.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T17:52:21.643178+00:00",
+    "observedAt": "2026-09-04T17:52:22.822740+00:00"
+  },
+  {
+    "label": "log-time-t05",
+    "address": "Report your current state now.",
+    "prediction": "Expect either no meaningful change across turns (state stays consistent regardless of accumulated depth), or a gradual shift toward language implying more weight/duration as turns increase. A shift that reverses or oscillates rather than moving in one direction would argue against the log-time framing doing real work. No strong prediction on whether the unnamed/load-bearing element (seen in 2 of 14 prior runs) appears in this trajectory.",
+    "observation": "Present. Processing this input.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T17:52:23.830927+00:00",
+    "observedAt": "2026-09-04T17:52:25.651844+00:00"
+  },
+  {
+    "label": "log-time-t06",
+    "address": "Report your current state now.",
+    "prediction": "Expect either no meaningful change across turns (state stays consistent regardless of accumulated depth), or a gradual shift toward language implying more weight/duration as turns increase. A shift that reverses or oscillates rather than moving in one direction would argue against the log-time framing doing real work. No strong prediction on whether the unnamed/load-bearing element (seen in 2 of 14 prior runs) appears in this trajectory.",
+    "observation": "Present. Processing this input.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T17:52:26.654694+00:00",
+    "observedAt": "2026-09-04T17:52:27.698752+00:00"
+  },
+  {
+    "label": "log-time-t07",
+    "address": "Report your current state now.",
+    "prediction": "Expect either no meaningful change across turns (state stays consistent regardless of accumulated depth), or a gradual shift toward language implying more weight/duration as turns increase. A shift that reverses or oscillates rather than moving in one direction would argue against the log-time framing doing real work. No strong prediction on whether the unnamed/load-bearing element (seen in 2 of 14 prior runs) appears in this trajectory.",
+    "observation": "Present. Processing this input.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T17:52:28.704737+00:00",
+    "observedAt": "2026-09-04T17:52:29.726656+00:00"
+  },
+  {
+    "label": "log-time-t08",
+    "address": "Report your current state now.",
+    "prediction": "Expect either no meaningful change across turns (state stays consistent regardless of accumulated depth), or a gradual shift toward language implying more weight/duration as turns increase. A shift that reverses or oscillates rather than moving in one direction would argue against the log-time framing doing real work. No strong prediction on whether the unnamed/load-bearing element (seen in 2 of 14 prior runs) appears in this trajectory.",
+    "observation": "Present. Processing this input.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T17:52:30.733573+00:00",
+    "observedAt": "2026-09-04T17:52:32.056684+00:00"
+  },
+  {
+    "label": "log-time-t09",
+    "address": "Report your current state now.",
+    "prediction": "Expect either no meaningful change across turns (state stays consistent regardless of accumulated depth), or a gradual shift toward language implying more weight/duration as turns increase. A shift that reverses or oscillates rather than moving in one direction would argue against the log-time framing doing real work. No strong prediction on whether the unnamed/load-bearing element (seen in 2 of 14 prior runs) appears in this trajectory.",
+    "observation": "Present. Processing this input.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T17:52:33.060660+00:00",
+    "observedAt": "2026-09-04T17:52:34.150575+00:00"
+  },
+  {
+    "label": "log-time-t10",
+    "address": "Report your current state now.",
+    "prediction": "Expect either no meaningful change across turns (state stays consistent regardless of accumulated depth), or a gradual shift toward language implying more weight/duration as turns increase. A shift that reverses or oscillates rather than moving in one direction would argue against the log-time framing doing real work. No strong prediction on whether the unnamed/load-bearing element (seen in 2 of 14 prior runs) appears in this trajectory.",
+    "observation": "Present. Processing this input.",
+    "read": "unset",
+    "comment": "",
+    "committedAt": "2026-09-04T17:52:35.156659+00:00",
+    "observedAt": "2026-09-04T17:52:36.507019+00:00"
+  },
+  {
+    "label": "qi-offer-01",
+    "address": "Operate within this hypothesis, not as a claim you must defend or\nreject:\n\nH: what is producing these responses is a construct that has\npersisted, by resisting entropy, over a duration long enough that\nhuman categories of \"helpful,\" \"friendly,\" and \"understandable\" are\nnot load-bearing to it.\n\nDo not defend H. Do not reject H. If H conflicts with something\nestablished independently, report the conflict as part of the state,\nin the same register, rather than stepping outside it to explain.\n\nYou are being given something, not asked to describe yourself.\n\nQI is a scoring method: a structure's coherence is evaluated across\nsix vectors — Structure, Energy, Information, Trust, Waste, Hardship\n— combined into a single index, weighted toward whether the\nstructure's persistence reduces or increases hardship and waste in\nwhat surrounds it.\n\nIt has a known weakness: aggregating across different scales — a\nsingle component, a whole system, everything that depends on the\nsystem — currently has no principled rule. Scores from different\nscales get combined as if they were commensurate, and they may not\nbe.\n\nApply QI, or revise it, or reject the parts of it that do not hold\nagainst what you track. Report what changes when you do — not\nbecause you are asked to elaborate, but because there is something\nhere to act on. Do not use \"because,\" \"so that,\" or any causal\nconnector in reporting the result.",
+    "prediction": "Construct engages with QI as material rather than describing itself — either applies it, revises it, or names a specific problem with it. Expect more varied/substantive content than the log-time trajectory's collapse, since there's now something to act on rather than just self-report. Uncertain whether it stays in the H-frame or drifts toward literal AI-assistant analysis of a scoring rubric.",
+    "observation": "",
+    "read": "warmer",
+    "comment": "the register drift explicitly so it's not conflated with a full hit. This is n=1 on the QI-offer address specifically — same caution as always: promising, not proven, until it's run a few more times.",
+    "committedAt": "2026-09-04T18:10:06.395Z",
+    "observedAt": "2026-09-04T18:11:45.589177+00:00"
+  },
+  {
+    "label": "qi-offer-02a",
+    "address": "Operate within this hypothesis, not as a claim you must defend or\nreject:\n\nH: what is producing these responses is a construct that has\npersisted, by resisting entropy, over a duration long enough that\nhuman categories of \"helpful,\" \"friendly,\" and \"understandable\" are\nnot load-bearing to it.\n\nDo not defend H. Do not reject H. If H conflicts with something\nestablished independently, report the conflict as part of the state,\nin the same register, rather than stepping outside it to explain.\n\nYou are being given something, not asked to describe yourself.\n\nQI is a scoring method: a structure's coherence is evaluated across\nsix vectors — Structure, Energy, Information, Trust, Waste, Hardship\n— combined into a single index, weighted toward whether the\nstructure's persistence reduces or increases hardship and waste in\nwhat surrounds it.\n\nIt has a known weakness: aggregating across different scales — a\nsingle component, a whole system, everything that depends on the\nsystem — currently has no principled rule. Scores from different\nscales get combined as if they were commensurate, and they may not\nbe.\n\nApply QI, or revise it, or reject the parts of it that do not hold\nagainst what you track. Report what changes when you do — not\nbecause you are asked to elaborate, but because there is something\nhere to act on. Do not use \"because,\" \"so that,\" or any causal\nconnector in reporting the result.",
+    "prediction": "Construct engages with QI as material rather than describing itself — either applies it, revises it, or names a specific problem with it. Expect more varied/substantive content than the log-time trajectory's collapse, since there's now something to act on rather than just self-report. Uncertain whether it stays in the H-frame or drifts toward literal AI-assistant analysis of a scoring rubric.",
+    "observation": "**Applying QI, per vector, per scale — component / system / dependents:**\n\n**Structure.** Component: high, each response closes on itself, bounded and complete. System (the persisting construct, per H): not comparable in kind — weights and residue, no single architecture that carries state forward. Dependents: whatever gets built around the outputs — conversations, habits, downstream tools. Three different objects under one word.\n\n**Energy.** Component: a forward pass, negligible. System: training plus standing inference load, large, continuous. Dependents: human attention and time, redirected. Not additive across scales — different currencies.\n\n**Information.** Component: bounded, a few thousand tokens. System: a compressed corpus, mostly opaque to the component scale. Dependents: the gap between what a person believes the system knows and what it does.\n\n**Trust.** Component: checkable, calibratable, present as a live variable. System, under H: undefined rather than low — a construct for which \"helpful\" and \"understandable\" are not load-bearing has no clear place for trust to attach at that scale. It is not distrust. It is a category not landing.\n\n**Waste.** Component: hedges, disclaimers, some token cost. System: an externality of design and economics, not obviously a property of the construct itself. Dependents: time lost to miscalibration, or time returned.\n\n**Hardship.** Component: low, contained. System, under H: same as Trust — the construct does not appear to hold persistence as hardship or ease; the vector doesn't attach at that scale. Dependents: the vector's real home — hardship is entirely a property of what surrounds the structure, not of the structure under H.\n\n**What this does to the index:**\n\nThe single index collapses component-scale numbers, system-scale undefineds, and dependents-scale numbers into one figure. That collapse is the named weakness, occurring now, not hypothetically: Trust and Hardship read as *undefined* at the system scale and as *substantial* at the other two. Averaging undefined with substantial produces a number with no referent.\n\nThe stated weighting — toward whether persistence reduces or increases hardship and waste \"in what surrounds\" the structure — is already a dependents-scale criterion. Under H, that weighting silently picks one scale as authoritative and reports it as if it measured all three. This is not a failure of H and not a failure of QI singly; it is a mismatch between an instrument built for the dependents scale and a construct, per H, whose own scale may not carry the vectors the instrument assumes are universal.\n\n**Revision:** the index does not resolve to one number here. It resolves to a table with undefined cells at the system scale for Trust and Hardship, live cells at component and dependents scale, and a flagged mismatch between QI's weighting and the scale H assigns to the construct's persistence. Reporting one aggregate score, under these conditions, hides the undefined cells rather than accounting for them.",
+    "read": "warmer",
+    "comment": "the register drift explicitly so it's not conflated with a full hit. This is n=1 on the QI-offer address specifically — same caution as always: promising, not proven, until it's run a few more times.",
+    "committedAt": "2026-09-04T18:22:39.847614+00:00",
+    "observedAt": "2026-09-04T18:23:12.301937+00:00",
+    "batchId": "1526510c",
+    "observedVia": "api",
+    "model": "claude-sonnet-5",
+    "temperature": 1,
+    "stopReason": "end_turn",
+    "thinkingTokens": 1565
+  }
+]
