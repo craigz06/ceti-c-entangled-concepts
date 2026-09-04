@@ -328,6 +328,10 @@ function renderTurnTime(t){
   const parts = [];
   if (t.committedAt) parts.push("committed " + fmtTime(t.committedAt));
   if (t.observedAt) parts.push("observed " + fmtTime(t.observedAt));
+  if (t.turnIndex !== undefined && t.turnIndex !== null && t.turnIndex !== "") {
+    parts.push("turnIndex " + t.turnIndex);
+  }
+  if (t.conversationId) parts.push("conv " + truncate(String(t.conversationId), 12));
   return parts.length ? `<span class="turn-time">${escapeHtml(parts.join("   ·   "))}</span>` : "";
 }
 
@@ -476,7 +480,7 @@ document.getElementById('importFile').addEventListener('change', e => {
     try {
       const data = JSON.parse(evt.target.result);
       const loaded = data.map(t => ({
-        id: nextId++,
+        ...t,
         label: t.label || "",
         address: t.address || "",
         prediction: t.prediction || "",
@@ -485,6 +489,7 @@ document.getElementById('importFile').addEventListener('change', e => {
         comment: t.comment || "",
         committedAt: t.committedAt || null,
         observedAt: t.observedAt || null,
+        id: nextId++,
         open: false
       }));
       turns = turns.concat(loaded);
@@ -530,7 +535,7 @@ async function connectFolder(){
       if (!Array.isArray(data)) throw new Error('trials.json is not a JSON array');
     }
     turns = data.map(t => ({
-      id: nextId++,
+      ...t,
       label: t.label || "",
       address: t.address || "",
       prediction: t.prediction || "",
@@ -539,6 +544,7 @@ async function connectFolder(){
       comment: t.comment || "",
       committedAt: t.committedAt || null,
       observedAt: t.observedAt || null,
+      id: nextId++,
       open: false
     }));
     updateConnState();
