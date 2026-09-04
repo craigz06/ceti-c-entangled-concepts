@@ -41,3 +41,49 @@ to ask for it there at all. Trust would then be, structurally, a
 dependents-scale (relational) vector only, never a component-scale
 one — which sharpens "undefined" into something more precise than
 "currently hard to measure."
+
+## Trust and Hardship — candidate operationalizations (2026-09-04)
+
+Follow-on to the earlier finding that Trust and Hardship don't attach
+at the component (single-object) scale — Trust requires two aligned
+objects by definition, and Hardship is entirely a property of what
+surrounds a structure, not of the structure itself. Both were left as
+"undefined, not measurable here" rather than scored. Craig proposed
+concrete proxies for each, closing part of that gap:
+
+**Trust, from audit depth.** Not a single compliance percentage — a
+three-way split, since collapsing to one number would reward
+passivity over genuine engagement:
+- comply (did the proposed thing get done)
+- extend (built on or added meaning beyond what was asked)
+- disregard (didn't follow the suggestion)
+A person who only complies isn't more trustworthy in any meaningful
+sense than one who frequently extends or pushes back — several of
+this project's better moments (the reciprocity reframe, pushback on
+overclaiming "trajectory" from a single run) were disregard-category
+moves that improved the work. The three-way split is necessary
+precisely so the metric doesn't penalize that.
+
+**Burden, from correction cost.** Raw character count spent pursuing
+a goal doesn't distinguish productive effort from pure friction —
+drafting an address and retyping a command because a file wasn't
+where it should be look identical by that measure. Split into two
+counters instead: characters spent on substance vs. characters spent
+on troubleshooting/correction. The ratio between them is a more
+honest burden signal than the total. (This session's own git-cleanup
+detour — dead servers, a misplaced file, a literally-pasted
+placeholder — is a real instance of the second bucket, logged as such
+rather than folded into "normal" effort.)
+
+**Named explicitly as proxies, not the thing itself** — same status
+as QI's six vectors: audit-depth and correction-cost are cheap,
+observable stand-ins for trust and burden, not trust and burden
+directly. Analogy offered in discussion: a retailer inferring "bad
+customer" from a buy-use-return pattern rather than from intent
+directly — a correlated, observable proxy for something that can't be
+observed directly.
+
+Status: proposed, not yet applied to any trial or scored
+retrospectively against the existing log. Next step, if pursued,
+would be scoring a few already-logged exchanges against both splits
+to see whether the categories are workable in practice.
