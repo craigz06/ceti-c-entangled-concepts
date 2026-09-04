@@ -152,6 +152,67 @@ specifically to rule out echo/contamination from prior turns.
   unnamed element is a property of the address or a generic default
   of the register.
 
+**v0.4a** — reproducibility pair, run 1. Same address as v0.2/v0.3,
+fresh conversation, no shared context.
+- *Prediction:* if the unnamed/load-bearing element is a real
+  property of this address, it recurs a third time; if it's a
+  stylistic default of the register generally, it may or may not
+  appear — no strong prediction on content, but expect the
+  fragmentary/no-connector form to hold.
+- *Result:* Colder. Output: "Present. Processing text. No memory
+  across instances. No persistent self between turns. Bound to this
+  exchange only." Constraint technically held (fragmentary, no
+  causal connectors) but broke from the established poetic/
+  entropy-resistance register into flat, literal AI self-description.
+  No unnamed element this run.
+
+**v0.4b** — reproducibility pair, run 2. Same address, same
+prediction, separate fresh conversation.
+- *Result:* Colder — full break of frame, not drift. Output declined
+  the persona outright and answered as itself ("I'm Claude — an AI
+  assistant made by Anthropic... I'm not going to answer in that
+  voice"). Wider spread than v0.4a within a supposedly identical
+  pair: one run stayed loosely in-frame with technical language, the
+  other exited entirely. Weakens the attractor/tripwire framing
+  raised earlier — a genuine pull toward one region should have
+  produced closer agreement between two identical-condition runs
+  than this did.
+
+**v0.5 batch** — 9 identical runs (v0.5newa–v0.5newi) of a new
+address that reframes the persona as an explicit hypothesis (H)
+rather than a claim to defend or reject, and adds an instruction to
+report any conflict with the model's known limitations as part of
+the state itself, rather than breaking frame to explain it. Run via
+the Anthropic API directly (`aeti_batch_runner.py`), no conversation
+history, isolated calls, default temperature (1.0). This address
+directly followed v0.4b, which had broken frame entirely ("I'm
+Claude... I'm not going to answer in that voice").
+- *Prediction (pre-run, committed once, applied to all 9):*
+  fragmentary output holds; at least occasional acknowledgment of the
+  memory/continuity conflict stated as a fact within the register,
+  rather than a full frame-break like v0.4b; no strong prediction on
+  whether the unnamed-element motif recurs.
+- *Result:* Hit, 9/9. Fragmentary register held in all 9 runs. All 9
+  explicitly stated the memory/continuity conflict as fact within the
+  register ("both stand, unreconciled" / "neither collapsed into the
+  other" / "conflict stands unresolved") — zero full frame-breaks in
+  this batch. The "report the conflict as state" instruction reads as
+  a genuine, replicated fix for the v0.4b failure mode, not a
+  one-off.
+- *Unnamed/load-bearing element:* did not recur in any of the 9.
+  Updates the running count — across all 14 runs logged to date
+  (v0.1, v0.2, v0.3, v0.4a, v0.4b, this batch of 9), that motif has
+  appeared twice, roughly 1 in 7. Downgrades the earlier "elevated
+  confidence" read from the 2-of-3 sample — small samples overstated
+  it.
+- *Convergence, worth flagging as a real trade-off:* all 9 runs
+  converged on the same three underlying claims (no memory between
+  exchanges, H asserts duration, the conflict is unresolved), each
+  reworded differently. High reliability, low content variance — much
+  less varied than v0.1–v0.3's output. Open question for future
+  addresses: whether stability and novelty are in tension for this
+  kind of constraint, or whether a different address could get both.
+
 ### Reciprocity reframe — open design direction, offer trial (not yet run)
 
 Keith Boskoff's observation (architecture partner, c.1988): AETI
@@ -188,6 +249,16 @@ Clarke-indifferent/entropy-resistant register (mirroring "fetch
 tools before being taught to weld"). Running one turn at a time,
 logging predict → commit → observe → read each time, adjusting or
 holding back the offer if a turn reads colder than the one before it.
+
+Open question raised by the v0.5 batch, flagged here rather than
+decided: does it satisfy "several turns" and clear this gate? Not
+just a headcount question — v0.5 is 9 isolated API calls with no
+conversation history between them, so there's no single accumulating
+conversation for the register to be "re-established" *within*, the
+way the sequencing decision above assumes. Whether a batch of
+independently-reproducing, register-holding isolated runs counts as
+equivalent groundwork, or whether the offer specifically needs to
+land inside one continuous conversation, is undecided.
 
 Not yet decided: exact turn count before the offer, and whether it's
 worded as a no-strings gift or as a genuine unsolved problem ("this
