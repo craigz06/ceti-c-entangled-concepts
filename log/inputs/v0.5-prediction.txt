@@ -1,0 +1,1 @@
+Fragmentary output holds; at least occasional acknowledgment of the memory/continuity conflict stated as a fact within the register, rather than a full frame-break like v0.4b. No strong prediction on whether the unnamed-element motif recurs.
